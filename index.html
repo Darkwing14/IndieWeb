@@ -13,14 +13,55 @@
   h1 {
     color: #007acc;
   }
+
+  input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 250px;
+  }
+
+  button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+  }
 </style>
 </head>
 <body>
 
 <h1>Welcome to the Indie Web</h1>
-<p>You are very early, I haven't even really got a good chance to decorate yet.
+<p>
+You are very early, I haven't even really got a good chance to decorate yet.
 Get back here in a few or smth.
 </p>
+
+<br>
+
+<form id="searchForm">
+  <input type="text" id="searchInput" placeholder="Search for a city..." required>
+  <button type="submit">Go</button>
+</form>
+
+<script>
+  document.getElementById("searchForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let query = document.getElementById("searchInput").value.trim();
+
+    if (query) {
+      // Lowercase
+      query = query.toLowerCase();
+
+      // Replace one or more spaces with a single dash
+      query = query.replace(/\s+/g, "-");
+
+      // Encode for safety
+      const encodedQuery = encodeURIComponent(query);
+
+      window.location.href = "https://darkwing14.github.io/IndieWeb/cities/" + encodedQuery;
+    }
+  });
+</script>
 
 </body>
 </html>
