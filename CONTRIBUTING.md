@@ -13,9 +13,8 @@ When adding your city to the database, you may optionally add a description to t
 Please keep cities in alphabetical order. Assume dashes come before A in alphabetical order.
 
 Also, please keep all content contributed appropriate for most ages. This is vauge, and will be determined
-at the discretion of whoever accepts the pull request. However, if you want rules, take the [Scratch Community Guidelines](https://scratch.mit.edu/community_guidelines)
-as a rule of thumb for keeping your content appropriate. It is not designed for this
-site though, so some rules, like embrace remix culture, may not apply.
+at the discretion of whoever accepts the pull request. However, if you want rules, consider reading the
+code of conduct.
 
 If you add a website to IndieWeb, keep in mind IndieWeb is technically public domain, and by contributing,
 you agree to make your website public domain when you add it, as it becomes part of IndieWeb.
