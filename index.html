@@ -28,7 +28,15 @@
 </style>
 </head>
 <body>
+<div id="navbar"></div>
 
+<script>
+fetch("https://darkwing14.github.io/IndieWeb/navbar.html")
+  .then(r => r.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  });
+</script>
 <h1>Welcome to the Indie Web</h1>
 <p>
   Welcome! If you would like to add a website, make a commit on
@@ -85,10 +93,7 @@
 <br>
 <a href="https://github.com/Darkwing14/IndieWeb/wiki">If you would like to search in general instead of just typing a city name, click here to go to the wiki.</a>
 <br>
-<a href="https://darkwing14.github.io/IndieWeb/database">All cities :)</a>
 <br>
-<br>
-<a href="https://darkwing14.github.io/IndieWeb/links">Links</a>
 
 <img src="https://raw.githubusercontent.com/Darkwing14/IndieWeb/main/resources/hamster.png" alt="hamster">
 <img src="https://raw.githubusercontent.com/Darkwing14/IndieWeb/main/resources/sparkle.png" alt="sparkles">
