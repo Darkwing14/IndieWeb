@@ -22,6 +22,15 @@
 </head>
 
 <body>
+  <div id="navbar"></div>
+
+<script>
+fetch("https://darkwing14.github.io/IndieWeb/navbar.html")
+  .then(r => r.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  });
+</script>
   <h1>Indie Web Links</h1>
   
   <div class="buttons">
