@@ -1,26 +1,35 @@
-  body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 50px;
-    color: #333;
-    margin: 0;
-    background-image: url("https://darkwing14.github.io/IndieWeb/resources/paper.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  h1 {
-    color: #007acc;
-  }
+/* Shared site styles */
 
-  input[type="text"] {
-    padding: 10px;
-    font-size: 16px;
-    width: 250px;
-  }
+body {
+  margin: 0;
+  padding: 50px;
 
-  button {
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-  }
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #333;
+
+  background-image: url("/IndieWeb/resources/paper.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; /* optional: keeps background steady */
+}
+
+h1 {
+  color: #007acc;
+}
+
+input[type="text"],
+button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type="text"] {
+  width: 250px;
+}
+
+button {
+  padding: 10px 15px;
+  cursor: pointer;
+}
