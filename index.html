@@ -44,26 +44,35 @@ fetch("https://darkwing14.github.io/IndieWeb/navbar.html")
 
 <br>
 
-<!-- Original City Search Form -->
-<form id="searchForm">
-  <input type="text" id="searchInput" placeholder="Search for a city..." required>
-  <button type="submit">Go</button>
-</form>
-
+<!-- New City Search Form -->
 <script>
-  document.getElementById("searchForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+  document.getElementById("searchForm").addEventListener("submit", function (event) {
+  event.preventDefault();
 
-    let query = document.getElementById("searchInput").value.trim();
+  let query = document.getElementById("searchInput").value.trim().toLowerCase();
+  const resultsDiv = document.getElementById("searchResults");
 
-    if (query) {
-      query = query.toLowerCase();
-      query = query.replace(/\s+/g, "-");
-      const encodedQuery = encodeURIComponent(query);
+  if (!query) {
+    resultsDiv.innerHTML = "<p>Please enter a search term.</p>";
+    return;
+  }
 
-      window.location.href = "https://darkwing14.github.io/IndieWeb/city/" + encodedQuery;
-    }
-  });
+  // example pages list (replace with actual data if exists)
+  const pages = Array.from(document.querySelectorAll("a"));
+
+  const matches = pages.filter(link =>
+    link.textContent.toLowerCase().includes(query)
+  );
+
+  if (matches.length === 0) {
+    resultsDiv.innerHTML = "<p>No results found.</p>";
+    return;
+  }
+
+  resultsDiv.innerHTML = matches
+    .map(link => `<div><a href="${link.href}">${link.textContent}</a></div>`)
+    .join("");
+});
 </script>
 
 <br>
