@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title> CREATORS OF INDIEWEB </title>
+    <link rel="stylesheet" href="shared.css">
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+<script>
+fetch("https://darkwing14.github.io/IndieWeb/navbar.html")
+  .then(r => r.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  });
+</script>
+    <h1>CREATORS OF INDIEWEB</h1>
+    <p>Darkwing14 - All parts of website not mentioned below, excluding the links page</p>
+    <br>
+  </body>
+</html>
