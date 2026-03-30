@@ -44,7 +44,16 @@ fetch("https://darkwing14.github.io/IndieWeb/navbar.html")
 
 <br>
 
-<!-- New City Search Form -->
+<!-- City Search -->
+<h2>Search for a City</h2>
+
+<form id="searchForm">
+  <input type="text" id="searchInput" placeholder="Type a city name..." required>
+  <button type="submit">Go</button>
+</form>
+
+<div id="searchResults"></div>
+
 <script>
   document.getElementById("searchForm").addEventListener("submit", function (event) {
   event.preventDefault();
