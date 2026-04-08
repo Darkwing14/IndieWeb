@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Sorry IDK what you're getting at</title>
+    <link rel="stylesheet" href="shared.css">
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+<script>
+fetch("https://darkwing14.github.io/IndieWeb/navbar.html")
+  .then(r => r.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  });
+</script>
+    <h1>404 not found</h1>
+    <p>Sorry, fellow indie devs, the page you are looking for...does not exist! Check to make sure the URL isn't misspelled, this may also be just work in progress! While you're here, why not press one of those goofy buttons in the Navbar above? Thanks!</p>
+  </body>
+</html>
