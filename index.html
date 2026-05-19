@@ -2,9 +2,39 @@
 <html>
 <head>
 <title>Indie Web</title>
-<link rel="stylesheet" href="shared.css">
+
+<style>
+  body {
+    background-image: url("https://darkwing14.github.io/IndieWeb/resources/space.png");
+    background-repeat: repeat;     /* tile background */
+    background-size: auto;         /* keep pixel size */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-shadow: 0 0 4px black;    /* readability on space bg */
+  }
+
+  #navbar {
+    width: 100%;
+  }
+
+  h1, h2, p, a {
+    text-shadow: 0 0 4px black;
+  }
+
+  a {
+    color: #aee3ff;
+  }
+
+  .buttons img {
+    width: 64px;
+    height: auto;
+  }
+</style>
+
 </head>
 <body>
+
 <div id="navbar"></div>
 
 <script>
@@ -14,6 +44,7 @@ fetch("https://darkwing14.github.io/IndieWeb/navbar.html")
     document.getElementById("navbar").innerHTML = data;
   });
 </script>
+
 <h1>Welcome to the Indie Web</h1>
 <p>
   Welcome! If you would like to add a website, make a PULL REQUEST on
@@ -22,7 +53,6 @@ fetch("https://darkwing14.github.io/IndieWeb/navbar.html")
 
 <br>
 
-<!-- Mojeek Search Bar (NEW) -->
 <h2>Search the Web (Mojeek)</h2>
 <form id="mojeekForm">
   <input type="text" id="mojeekInput" placeholder="Search the web..." required>
@@ -44,37 +74,6 @@ fetch("https://darkwing14.github.io/IndieWeb/navbar.html")
 
 <br>
 
-<!-- New City Search Form -->
-<script>
-  document.getElementById("searchForm").addEventListener("submit", function (event) {
-  event.preventDefault();
-
-  let query = document.getElementById("searchInput").value.trim().toLowerCase();
-  const resultsDiv = document.getElementById("searchResults");
-
-  if (!query) {
-    resultsDiv.innerHTML = "<p>Please enter a search term.</p>";
-    return;
-  }
-
-  // example pages list (replace with actual data if exists)
-  const pages = Array.from(document.querySelectorAll("a"));
-
-  const matches = pages.filter(link =>
-    link.textContent.toLowerCase().includes(query)
-  );
-
-  if (matches.length === 0) {
-    resultsDiv.innerHTML = "<p>No results found.</p>";
-    return;
-  }
-
-  resultsDiv.innerHTML = matches
-    .map(link => `<div><a href="${link.href}">${link.textContent}</a></div>`)
-    .join("");
-});
-</script>
-
 <iframe
   src="https://darkwing14.github.io/IndieWeb/city/notetaker"
   width="480"
@@ -83,21 +82,27 @@ fetch("https://darkwing14.github.io/IndieWeb/navbar.html")
   title="Darkwing Notetaker"
 ></iframe>
 
-<br>
-<br>
-<a href="https://github.com/Darkwing14/IndieWeb/wiki">If you would like to search in general instead of just typing a city name, click here to go to the wiki.</a>
-<br>
-<br>
+<br><br>
+
+<a href="https://github.com/Darkwing14/IndieWeb/wiki">
+  If you would like to search in general instead of just typing a city name, click here to go to the wiki.
+</a>
+
+<br><br>
 
 <img src="https://raw.githubusercontent.com/Darkwing14/IndieWeb/main/resources/hamster.png" alt="hamster">
 <img src="https://raw.githubusercontent.com/Darkwing14/IndieWeb/main/resources/sparkle.png" alt="sparkles">
 <img src="https://raw.githubusercontent.com/Darkwing14/IndieWeb/main/resources/pc.png" alt="console">
-<br>
-<br>
+
+<br><br>
+
 <p>If you want to read stuff I wrote, <a href="https://darkwing14.github.io/IndieWeb/city/articles/home">Click here</a>.</p>
+
 <br>
+
 <a href="https://github.com/darkwing14" rel="me">My Profile</a>
-  <div class="buttons">
+
+<div class="buttons">
   <a href="https://ismile.neocities.org/" target="_blank">
     <img src="https://darkwing14.github.io/IndieWeb/resources/sapphireforkback.png" alt="Back">
   </a>
@@ -107,6 +112,8 @@ fetch("https://darkwing14.github.io/IndieWeb/navbar.html")
   <a href="https://pythonrpg010.github.io/PythonOS/index.html" target="_blank">
     <img src="https://darkwing14.github.io/IndieWeb/resources/sapphireforknext.png" alt="Next">
   </a>
+</div>
+
 <p>This is the Sapphire Fork webring!</p>
 
 </body>
